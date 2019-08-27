@@ -115,7 +115,7 @@ th, td {
 		  </div>  
 		</nav>
 	</div>
-<a href="/add_item.php">Add new item</a>
+<a href="/Add_item.php">Add new item</a>
   <div class="col-sm-8">
   	<table>
   		<tr>
