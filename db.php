@@ -1,29 +1,20 @@
 <?php 
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='storeman';
-$port='3306';
 function query($sql)
 {
-	global $hostname;
-	global $username;
-	global $password;
-	global $dbname;
-	global $port;
-	$conn = new mysqli($hostname,$username,$password,$dbname,$port);
-	
-	if ($conn->connect_error)
-		die($conn->error);
+	$db = parse_url(getenv("DATABASE_URL"));
 
-	$result = $conn->query($sql);
-	if(!$result)
-	{
-		echo "SQL execution fail <br>";
-		die($conn->error);
-	}
-	
-	$row =mysqli_fetch_all($result);
-	return $row;
+	$pdo = new PDO("pgsql:" . sprintf(
+	    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+	    $db["host"],
+	    $db["port"],
+	    $db["user"],
+	    $db["pass"],
+	    ltrim($db["path"], "/")
+));
+	$stmt = $pdo->prepare($sql);
+	//set the return data type:
+	$stmt -> setFetchMode(PDO::FETCH_ASSOC);
+	$stmt ->execute();
+	$resultSet = $stmt->fetchAll();
 }
 ?>

@@ -23,11 +23,5 @@
 	$resultSet = $stmt->fetchAll();
 
  ?>
-<ul>
-	<?php 
-		foreach ($resultSet as $row) {
-			echo '<li>'.$row['studentname'].'--'.$row['course'].'<li>';
-		}
- ?>
 </body>
 </html>
