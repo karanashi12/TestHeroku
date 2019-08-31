@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 <?php 
 	$db = parse_url(getenv("DATABASE_URL"));
 
@@ -16,5 +10,3 @@
 	    ltrim($db["path"], "/")
 ));
  ?>
-</body>
-</html>
