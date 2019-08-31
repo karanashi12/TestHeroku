@@ -188,11 +188,11 @@ form, .content {
 					$row = Query($sql);
 				for($i=0;$i<count($row);$i++) 
 					{?>
-					<div class="col-sm-4">
+					<div class="col-sm-2">
 						<div class="khoi">
 							<div class="tieude"><?=$row[$i][1]?></div>
 							<div class="noidung">
-								<a href="INDEX2.php?PID=<?=$row[$i][0]?>".>
+								<a href="index.php?PID=<?=$row[$i][0]?>".>
 									<img class="img-thumbnail" src="<?=$row[$i][2]?>" width="100%">
 								</a>
 							</div>
@@ -228,11 +228,11 @@ form, .content {
 					$row = Query($sql);
 					for($i=0;$i<count($row);$i++) 
 						{?>
-					<div class="col-sm-4">
+					<div class="col-sm-2">
 						<div class="khoi">
 							<div class="tieude"><?=$row[$i][1]?></div>
 							<div class="noidung">
-								<a href="INDEX2.php?PID=<?=$row[$i][0]?>".>
+								<a href="index.php?PID=<?=$row[$i][0]?>".>
 									<img class="img-thumbnail" src="<?=$row[$i][2]?>" width="100%" height="100%">
 								</a>
 							</div>

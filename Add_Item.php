@@ -1,4 +1,3 @@
-<?php include('Function.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,33 +85,7 @@ form, .content {
   <h1>Shop4E</h1>
   <p>We are all in this together</p>
 </div>
-  <div class="menu">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand" href="INDEX2.php">Shop4E</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <?php 
-          require_once './db.php';
-          $sql="Select * From category";
-          $row = Query($sql);
-          for($i=0;$i<count($row);$i++)
-          {?>
-            <li class="nav-item">
-              <a class="nav-link" href="INDEX2.php?CID=<?=$row[$i][0]?>"><?=$row[$i][1]?></a>
-            </li>
-          <?php
-          }
-        ?>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-      </div>  
-    </nav>
-  </div>
+  
   <form method="post" action="">
     <a href="admin.php">Manage Items</a>
     <?php include('error.php'); ?>
@@ -133,21 +106,8 @@ form, .content {
       <input type="text" name="price" >
     </div>
     <div class="input-group">
-      <label>Category:</label>
-      <select name="ct" id="">
-        <option value="1">PC</option>
-        <option value="2">Laptop</option>
-        <option value="3">Keyboard</option>
-        <option value="4">Mouse</option>
-      </select>
-    </div>
-    <div class="input-group">
-      <textarea form="usrform" style="width: 95%;">Spec:
-
-
-
-Review:
-      </textarea>
+      <label>Stock:</label>
+      <input type="number" name="stock" min="0">
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="Add_item">Add</button>

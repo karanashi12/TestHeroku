@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shop4E Admin</title>
+  <title>ATN Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -85,38 +85,10 @@ th, td {
 </style>
 
 <div class="jumbotron text-center">
-  <h1>Shop4E</h1>
-  <p>We are all in this together</p>
+  <h1>ATN Admin</h1>
 </div>
-	<div class="menu">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		  <a class="navbar-brand" href="INDEX2.php">Shop4E</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-		    <ul class="navbar-nav">
-			    <?php 
-					require_once './db.php';
-					$sql="Select * From category";
-					$row = Query($sql);
-					for($i=0;$i<count($row);$i++)
-					{?>
-						<li class="nav-item">
-							<a class="nav-link" href="INDEX2.php?CID=<?=$row[$i][0]?>"><?=$row[$i][1]?></a>
-						</li>
-					<?php
-					}
-				?>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">About</a>
-		      </li>
-		    </ul>
-		  </div>  
-		</nav>
-	</div>
-<a href="/Add_item.php">Add new item</a>
-  <div class="col-sm-8">
+<a href="/Add_Item.php">Add new item</a>
+  <div class="col-sm-12">
   	<table>
   		<tr>
   			<th>Category Number</th>
@@ -142,7 +114,7 @@ th, td {
 				<td><input type="checkbox" name="Availability" value="Availability" checked></td>
 			<?php } ?>
 			<td>
-				<a href="">Edit</a>|<a href="INDEX2.php?PID=<?=$row[$i][0]?>">Detail</a>|<a href="">Delete</a>
+				<input type="button" name="Edit">|<input type="button" name="Delete">
 			</td>
 		</tr>
 	<?php } ?>
