@@ -52,8 +52,9 @@
       $password = pg_escape_string($pdo, $_POST['password']);
       $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
       query($sql);
-      for($i=0;$i<count($row);$i++) {
-
+      if (count($row)>0) {
+        header("./Admin.php");
+        die();
       }
 ?>
 </body>
