@@ -15,12 +15,6 @@
 	    $db["pass"],
 	    ltrim($db["path"], "/")
 ));
-	$sql = "SELECT username, password FROM admin";
-	$stmt = $pdo->prepare($sql);
-	//set the return data type:
-	$stmt -> setFetchMode(PDO::FETCH_ASSOC);
-	$stmt ->execute();
-	$resultSet = $stmt->fetchAll();
  ?>
 </body>
 </html>
