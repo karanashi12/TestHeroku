@@ -16,5 +16,7 @@ function query($sql)
 	$stmt -> setFetchMode(PDO::FETCH_ASSOC);
 	$stmt ->execute();
 	$row = $stmt->fetchAll();
+
+	
 }
 ?>
