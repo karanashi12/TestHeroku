@@ -46,7 +46,6 @@
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>   
     </form>
-    <p class="text-center"><a href="#">Create an Account</a></p>
 </div>
 </body>
 </html>
