@@ -91,33 +91,24 @@ th, td {
   <div class="col-sm-12">
   	<table>
   		<tr>
-  			<th>Category Number</th>
+  			<th>Product ID</th>
   			<th>Product Name</th>
   			<th>Price</th>
-  			<th>Availability</th>
+  			<th>Stock</th>
   		</tr>
   		<?php 
-          require_once './db.php';
-          $sql="Select * From products";
-          $row = Query($sql);
+          require_once './HerokuLogin.php';
+          $sql="Select * From product";
+          $row = query($sql);
           for($i=0;$i<count($row);$i++)
         {?>
-		<tr>
-			<td><?=$row[$i][5]?></td>
-			<td><?=$row[$i][1]?></td>
-			<td><?=$row[$i][4]?></td>
-			<?php if ($row[$i][3]==0) {
-			?>
-			<td><input type="checkbox" name="Availability" value="Availability"></td>
-			<?php
-			} else {?>
-				<td><input type="checkbox" name="Availability" value="Availability" checked></td>
-			<?php } ?>
-			<td>
-				<input type="button" name="Edit">|<input type="button" name="Delete">
-			</td>
-		</tr>
-	<?php } ?>
+  		<tr>
+  			<td><?=$row[$i][0]?></td>
+  			<td><?=$row[$i][1]?></td>
+  			<td><?=$row[$i][3]?></td>
+        <td><?=$row[$i][4]?></td>
+  		</tr>
+      <?php } ?>
   	</table>
   </div>
 </body>
