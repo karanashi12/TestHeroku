@@ -48,9 +48,13 @@
     </form>
 </div>
 <?php require_once './HerokuLogin.php';
-      $sql = "SELECT * FROM admin";
+      $username = pg_escape_string($pdo, $_POST['username']);
+      $password = pg_escape_string($pdo, $_POST['password']);
+      $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
       query($sql);
-      
+      for($i=0;$i<count($row);$i++) {
+
+      }
 ?>
 </body>
 
