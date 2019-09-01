@@ -1,4 +1,6 @@
-<?php 
+<?php
+	function query($sql)
+{
 	$db = parse_url(getenv("DATABASE_URL"));
 
 	$pdo = new PDO("pgsql:" . sprintf(
@@ -9,8 +11,7 @@
 	    $db["pass"],
 	    ltrim($db["path"], "/")
 ));
-	function query($sql)
-{
+
 	$stmt = $pdo->prepare($sql);
 	//set the return data type:
 	$stmt ->execute();
