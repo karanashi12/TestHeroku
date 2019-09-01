@@ -13,7 +13,7 @@ $db = parse_url(getenv("DATABASE_URL"));
 
   $params = array(
     'user' => $_POST['username'],
-    'pass' => hash('ripemd160', $_POST['password'])
+    'pass' => $_POST['password']
   );
   $sql = "SELECT * FROM admin WHERE username= :user AND password = :pass ";
   $stmt = $pdo->prepare($sql);
