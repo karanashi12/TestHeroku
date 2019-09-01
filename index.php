@@ -52,8 +52,8 @@
       $password = pg_escape_string($pdo, $_POST['password']);
       $password = md5($password);
       $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
-      $rows = query($sql);
-      if (pg_num_rows($rows)>0) {
+      $row = query($sql);
+      if (pg_num_rows($row)>0) {
         header("Location: Admin.php");
         die();
       }
