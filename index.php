@@ -50,6 +50,7 @@
 <?php require_once './HerokuLogin.php';
       $username = pg_escape_string($pdo, $_POST['username']);
       $password = pg_escape_string($pdo, $_POST['password']);
+      $password = md5($password);
       $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
       $rows = query($sql);
       if (pg_num_rows($rows)>0) {
