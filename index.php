@@ -37,13 +37,13 @@
     <form method="post" action="index.php">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required" name="username">
+            <input type="text" class="form-control" placeholder="Username" required="required" id="username">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required" name="password">
+            <input type="password" class="form-control" placeholder="Password" required="required" id="password">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" name="login">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block" id="login">Log in</button>
         </div>   
     </form>
 </div>
