@@ -107,6 +107,7 @@ th, td {
   			<td><?=$row[$i][1]?></td>
   			<td><?=$row[$i][3]?></td>
         <td><?=$row[$i][4]?></td>
+        <td><img src="<?=$row[$i][2]?>"></td>
   		</tr>
       <?php } ?>
   	</table>

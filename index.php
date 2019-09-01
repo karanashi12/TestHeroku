@@ -1,3 +1,5 @@
+<?php include('./Function.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,18 +49,6 @@
         </div>   
     </form>
 </div>
-<?php include('./HerokuLogin.php');
-      if (isset($_POST['login'])) {
-      $username = pg_escape_string($pdo, $_POST['username']);
-      $password = pg_escape_string($pdo, $_POST['password']);
-      $password = md5($password);
-      $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
-      $row = query($sql);
-      if (count($row)>0) {
-        header("Location: Admin.php");
-        die();
-      }}
-?>
 </body>
 
 </html>
