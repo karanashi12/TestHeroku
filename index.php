@@ -47,7 +47,7 @@
         </div>   
     </form>
 </div>
-<?php require_once './HerokuLogin.php';
+<?php include('./HerokuLogin.php');
       $username = pg_escape_string($pdo, $_POST['username']);
       $password = pg_escape_string($pdo, $_POST['password']);
       $password = md5($password);

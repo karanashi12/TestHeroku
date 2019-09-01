@@ -97,7 +97,7 @@ th, td {
   			<th>Stock</th>
   		</tr>
   		<?php 
-          require_once './HerokuLogin.php';
+          include('./HerokuLogin.php');
           $sql="Select * From product";
           $row = query($sql);
           for($i=0;$i<count($row);$i++)
