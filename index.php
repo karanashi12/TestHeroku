@@ -48,6 +48,7 @@
     </form>
 </div>
 <?php include('./HerokuLogin.php');
+      if (isset($_POST['login'])) {
       $username = pg_escape_string($pdo, $_POST['username']);
       $password = pg_escape_string($pdo, $_POST['password']);
       $password = md5($password);
@@ -56,7 +57,7 @@
       if (pg_num_rows($row)>0) {
         header("Location: Admin.php");
         die();
-      }
+      }}
 ?>
 </body>
 
