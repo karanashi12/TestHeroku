@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ARN Login</title>
+  <title>ATN Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -34,7 +34,7 @@
     }
 </style>
 <div class="login-form">
-    <form method="post">
+    <form method="post" action="index.php">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" required="required" name="username">
@@ -53,7 +53,7 @@
       $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
       query($sql);
       if (count($row)>0) {
-        header("./Admin.php");
+        header("Location: Admin.php");
         die();
       }
 ?>
