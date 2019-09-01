@@ -13,7 +13,6 @@
 {
 	$stmt = $pdo->prepare($sql);
 	//set the return data type:
-	$stmt -> setFetchMode(PDO::FETCH_ASSOC);
 	$stmt ->execute();
 	$row = $stmt->fetchAll();
 
