@@ -54,7 +54,7 @@
       $password = md5($password);
       $sql = "SELECT * FROM admin WHERE username='$username' AND password = '$password' ";
       $row = query($sql);
-      if count($row)>0) {
+      if (count($row)>0) {
         header("Location: Admin.php");
         die();
       }}
