@@ -17,6 +17,6 @@
 	$stmt ->execute();
 	$row = $stmt->fetchAll();
 
-	return $row;
+	return $rows;
 }
 ?>
