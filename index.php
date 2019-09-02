@@ -34,7 +34,7 @@
     }
 </style>
 <div class="login-form">
-    <form method="post" action="Function.php">
+    <form method="post" action="Admin.php">
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" required="required" id="username">
