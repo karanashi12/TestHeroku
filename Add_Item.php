@@ -107,7 +107,7 @@ form, .content {
     </div>
     <div class="input-group">
       <label>Stock:</label>
-      <input type="number" name="stock" min="0">
+      <input type="number" name="stock" min="0" name="stock">
     </div>
     <div class="input-group">
       <button type="submit" class="btn" name="Add_item">Add</button>

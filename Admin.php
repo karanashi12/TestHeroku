@@ -8,13 +8,13 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
   $rows = pg_query($sql);
   if(pg_num_rows($rows)==1) { ?>
     <script>
-            alert("Login successfully!!");
+            alert("Login successful! BRING THE SLEDHAMMER!");
         </script>
     <?php
     } else { 
         ?>
             <script>
-                alert("Wrong Username/Password");
+                alert("Not one of our admin! GET BACK DEMON!");
                 window.location.href = "/index.php";
             </script>
         <?php }
@@ -111,7 +111,6 @@ th, td {
 <div class="jumbotron text-center">
   <h1>ATN Admin</h1>
 </div>
-<a href="/Add_Item.php">Add new item</a>
   <div class="col-sm-12">
   	<table>
   		<tr>
