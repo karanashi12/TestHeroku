@@ -18,10 +18,9 @@ if (isset($_POST['login'])) {
   $password = md5($password);
 
   $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
-  $stmt = $pdo->prepare($sql);
-  $stmt -> execute();
-  $login = (bool) $stmt->featchAll();
-  if ($login) {
+  $row = pg_query($pdo,$sql);
+
+  if (pg_num_rows($row)>0) {
     header('Location: Admin.php');
   }
 }
