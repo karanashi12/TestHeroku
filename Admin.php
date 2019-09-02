@@ -9,7 +9,7 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["pass"],
       ltrim($db["path"], "/")
       ));
-  if (isset($_POST['login'])) {
+  if (isset($_POST['username']) && isset($_POST['password'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
