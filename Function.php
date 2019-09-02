@@ -12,15 +12,13 @@ $db = parse_url(getenv("DATABASE_URL"));
       ));
 if (isset($_POST['login'])) {
 
-  $username = pg_escape_string($pdo, $_POST['username']);
-  $password = pg_escape_string($pdo, $_POST['password']);
-
-  $password = md5($password);
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
   $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
-  $row = pg_query($pdo,$sql);
+  $row = pg_query($sql);
 
-  if (pg_num_rows($row)>0) {
+  if (pg_num_rows($row)==1) {
     header('Location: Admin.php');
   }
 }
