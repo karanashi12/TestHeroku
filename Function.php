@@ -10,16 +10,20 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["pass"],
       ltrim($db["path"], "/");
       ));
+if (isset($_POST['login'])) {
 
-  $params = array(
-    'user' => $_POST['username'],
-    'pass' => $_POST['password']
-  );
-  $sql = "SELECT * FROM admin WHERE username= :user AND password = :pass ";
+  $username = pg_escape_string($pdo, $_POST['username']);
+  $password = pg_escape_string($pdo, $_POST['password']);
+
+  $password = md5($password);
+
+  $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
   $stmt = $pdo->prepare($sql);
-  $stmt -> execute($params);
+  $stmt -> execute();
   $login = (bool) $stmt->featchAll();
   if ($login) {
     header('Location: Admin.php');
   }
+}
+  
  ?>
