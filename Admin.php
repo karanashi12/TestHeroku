@@ -9,7 +9,7 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["pass"],
       ltrim($db["path"], "/")
       ));
-  if (isset($_POST['username']) && isset($_POST['password'])) {
+  if (isset($_POST['login'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -17,7 +17,7 @@ $db = parse_url(getenv("DATABASE_URL"));
   $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
   $row = pg_query($sql);
 
-  if (pg_num_rows($row)==1) {?>
+  if (pg_num_rows($row)!=0) {?>
     <script>
       alert("Login success! Bring dat hammer!");
     </script>
