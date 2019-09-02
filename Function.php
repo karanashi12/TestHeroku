@@ -1,5 +1,4 @@
 <?php 
-seasion_start();
 $db = parse_url(getenv("DATABASE_URL"));
 
   $pdo = new PDO("pgsql:" . sprintf(
