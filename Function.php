@@ -10,7 +10,8 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["pass"],
       ltrim($db["path"], "/");
       ));
-if (isset($_POST['login'])) {
+  try {
+    if (isset($_POST['login'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -24,5 +25,9 @@ if (isset($_POST['login'])) {
     </script>
   <?php}
 }
+} catch (Exception $e) {
+echo 'Caught exception: ', $e->getMessage(), "\n";
+}
+
   
  ?>
