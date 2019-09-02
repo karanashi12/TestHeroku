@@ -23,7 +23,7 @@ $db = parse_url(getenv("DATABASE_URL"));
     <script>
       window.location.href = "./Admin.php"
     </script>
-  <?php}
+  <?php }
 } catch (Exception $e) {
 echo 'Caught exception: ', $e->getMessage(), "\n";
 }
