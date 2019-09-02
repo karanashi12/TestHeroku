@@ -8,7 +8,7 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["port"],
       $db["user"],
       $db["pass"],
-      ltrim($db["path"], "/");
+      ltrim($db["path"], "/")
       ));
   try {
     if (isset($_POST['login'])) {
