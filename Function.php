@@ -18,9 +18,11 @@ if (isset($_POST['login'])) {
   $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
   $row = pg_query($sql);
 
-  if (pg_num_rows($row)==1) {
-    header('Location: Admin.php');
-  }
+  if (pg_num_rows($row)==1) {?>
+    <script>
+      window.location.href = "./Admin.php"
+    </script>
+  <?php}
 }
   
  ?>
