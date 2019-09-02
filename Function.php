@@ -10,8 +10,7 @@ $db = parse_url(getenv("DATABASE_URL"));
       $db["pass"],
       ltrim($db["path"], "/")
       ));
-  try {
-    if (isset($_POST['login'])) {
+  if (isset($_POST['login'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -24,8 +23,6 @@ $db = parse_url(getenv("DATABASE_URL"));
       window.location.href = "./Admin.php"
     </script>
   <?php }
-} catch (Exception $e) {
-echo 'Caught exception: ', $e->getMessage(), "\n";
 }
 
   
