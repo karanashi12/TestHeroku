@@ -1,35 +1,25 @@
 <?php 
-$db = parse_url(getenv("DATABASE_URL"));
-
-  $pdo = new PDO("pgsql:" . sprintf(
-      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-      $db["host"],
-      $db["port"],
-      $db["user"],
-      $db["pass"],
-      ltrim($db["path"], "/")
-      ));
-  if (isset($_POST['login'])) {
-
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  $sql = "SELECT * FROM admin WHERE username= '$username' AND password = '$password' ";
-  $row = pg_query($sql);
-
-  if (pg_num_rows($row)!=0) {?>
+require_once './connect.php';  
+if(isset($_POST["username"]) && isset($_POST["password"]))
+{
+  $user = $_POST["username"];
+  $pass = $_POST["password"];
+  $sql ="SELECT * FROM admin WHERE username = '$user' AND password= '$pass'";
+  $rows = pg_query($sql);
+  if(pg_num_rows($rows)==1) { ?>
     <script>
-      alert("Login success! Bring dat hammer!");
-    </script>
-  <?php }
-  else{?>
-    <script>
-      alert("Not one of our admin! GET BACK DEMON!");
-      window.location.href = "/index.php";
-    </script>
-  <?php }
+            alert("Login successfully!!");
+        </script>
+    <?php
+    } else { 
+        ?>
+            <script>
+                alert("Wrong Username/Password");
+                window.location.href = "/index.php";
+            </script>
+        <?php }
 }
- ?>
+?>
 
 
 <!DOCTYPE html>
